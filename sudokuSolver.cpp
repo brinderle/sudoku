@@ -67,14 +67,16 @@ int main(int argc, char const *argv[]) {
 		exit(1);
 	}
 
-	solvePuzzle(grid);
-
-	// print the grid
-	for (int i = 0; i < 9; i++) {
-		cout << endl;
-		for (int j = 0; j < 9; j++) {
-			cout << grid[i][j] << " ";
+	if (solvePuzzle(grid)) {
+		// print the grid
+		for (int i = 0; i < 9; i++) {
+			for (int j = 0; j < 9; j++) {
+				cout << grid[i][j] << " ";
+			}
+			cout << endl;
 		}
+	} else {
+		cout << "No solution to this puzzle" << endl;
 	}
 
 	return 0;
